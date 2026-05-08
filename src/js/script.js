@@ -20,8 +20,18 @@ function validarNumero(msg) {
 // criar mais 2 funções :
 
 //  para ver se o estoque baixo (< 5)
+function verificarEstoque() {
+    let quantidade = prompt("Digite a quantidade de estoque:");
 
+    if (quantidade < 5){
+        return "Estoque baixo";
+    } else {
+        return "Estoque OK";
+    }
+}
 
+let statusEstoque = verificarEstoque();
+alert(`Status do estoque: ${statusEstoque}`);
 
 //  para classificar o Vinho 
 // (se o ano >= 2023 = Jovem, >= 2016 = Amadurecido e depois disso é Antigo)
