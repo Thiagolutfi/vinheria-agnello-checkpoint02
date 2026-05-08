@@ -16,8 +16,6 @@ function validarNumero(msg) {
     }
     return Number(valor);
 }
-//DAQUI PRA BAIXO QUEM FIZER, APAGAR MEUS COMENTARIOS E EXPLICAR O QUE FEZ 
-// criar mais 2 funções :
 
 //  para ver se o estoque baixo (< 5)
 function verificarEstoque() {
@@ -35,8 +33,20 @@ alert(`Status do estoque: ${statusEstoque}`);
 
 //  para classificar o Vinho 
 // (se o ano >= 2023 = Jovem, >= 2016 = Amadurecido e depois disso é Antigo)
+function classificarVinho() {
+    let anos = prompt("Digite a idade do vinho:");
 
+    if (anos <= 2) {
+        return "Vinho Jovem";
+    } else if (anos <= 5) {
+        return "Vinho Amadurecido";
+    } else {
+        return "Vinho Antigo";
+    }   
+}
 
+let classificacaoVinho = classificarVinho();
+alert(`Classificação do vinho: ${classificacaoVinho}`);
 
 //Programa principal -> 
 // while (enquanto a respota for "sim" continua, entao tem que criar uma variavel com conteudo "sim" para rodar)
