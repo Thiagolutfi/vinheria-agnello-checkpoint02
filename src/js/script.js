@@ -50,6 +50,7 @@ alert(`Classificação do vinho: ${classificacaoVinho}`);
 
 //Programa principal -> 
 // while (enquanto a respota for "sim" continua, entao tem que criar uma variavel com conteudo "sim" para rodar)
+
 //     adicionar uma variavel contadora dos vinhos cadastrados 
 let totalCadastrado = 0; 
 //     contar vinhos que estao em baixo estoque (fazer um if utilizando a função do estoque baixo)
