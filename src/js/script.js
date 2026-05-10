@@ -48,6 +48,26 @@ function classificarVinho() {
 let classificacaoVinho = classificarVinho();
 alert(`Classificação do vinho: ${classificacaoVinho}`);
 
+bruno
+
+let vinhoMaisAntigo = "";
+let safraMaisAntiga = 9999;
+
+if (safra < safraMaisAntiga) {
+    safraMaisAntiga = safra;
+    vinhoMaisAntigo = nome;
+}
+
+alert(
+    "RELATÓRIO FINAL" +
+    "Total de cadastros: " + totalCadastros + "" +
+    "Vinhos com estoque baixo: " + totalEstoqueBaixo + "" +
+    "Vinho mais antigo: " + vinhoMaisAntigo +
+    " (Safra " + safraMaisAntiga + ")"
+);
+
+
+
 //Programa principal -> 
 // while (enquanto a respota for "sim" continua, entao tem que criar uma variavel com conteudo "sim" para rodar)
 //     adicionar uma variavel contadora dos vinhos cadastrados 
