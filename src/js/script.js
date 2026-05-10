@@ -51,7 +51,12 @@ alert(`Classificação do vinho: ${classificacaoVinho}`);
 //Programa principal -> 
 // while (enquanto a respota for "sim" continua, entao tem que criar uma variavel com conteudo "sim" para rodar)
 //     adicionar uma variavel contadora dos vinhos cadastrados 
-//     contar vinhos que estao em baixo estoque (fazer um if utilizando a função do estoque baixo) 
+let totalCadastrado = 0; 
+//     contar vinhos que estao em baixo estoque (fazer um if utilizando a função do estoque baixo)
+let totalEstoqueBaixo = 0;
+    if (verificarEstoque(quantidade) === "Estoque Baixo") {
+        estoqueBaixo ++;
+    }
 //     achar o ano mais antigo dos vinhos e o nome dele tbm
 //     no final perguntar se deseja cadastrar outro (usando a mesma variavel do while)
 
