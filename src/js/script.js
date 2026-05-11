@@ -1,5 +1,4 @@
-//funções
-//função para validar entrada de string (chamar como se fosse um prompt -> Exemplo: validarNumero("Nome do vinho: ")
+
 function validarTexto(msg) {
     let entrada = prompt(msg);
     while (!entrada) {
@@ -8,7 +7,6 @@ function validarTexto(msg) {
     return entrada;
 }
 
-//função para validar entrada de numero (chamar como se fosse um prompt -> Exemplo: validarNumero("Quantidade: "))
 function validarNumero(msg) {
     let valor = prompt(msg);
     while (isNaN(valor) || valor === "") {
@@ -17,74 +15,67 @@ function validarNumero(msg) {
     return Number(valor);
 }
 
-//  para ver se o estoque baixo (< 5)
-function verificarEstoque() {
-    let quantidade = prompt("Digite a quantidade de estoque:");
-
-    if (quantidade < 5){
-        return "Estoque baixo";
-    } else {
-        return "Estoque OK";
-    }
+function verificarEstoque(qtd) {
+    return qtd < 5;
 }
 
-let statusEstoque = verificarEstoque();
-alert(`Status do estoque: ${statusEstoque}`);
-
-//  para classificar o Vinho 
-// (se o ano >= 2023 = Jovem, >= 2016 = Amadurecido e depois disso é Antigo)
-function classificarVinho() {
-    let anos = prompt("Digite a idade do vinho:");
-
-    if (anos <= 2) {
+function classificarVinho(anos) {
+    if (anos <= 2023) {
         return "Vinho Jovem";
-    } else if (anos <= 5) {
+    } else if (anos <= 2020) {
         return "Vinho Amadurecido";
     } else {
         return "Vinho Antigo";
     }   
 }
 
-let classificacaoVinho = classificarVinho();
-alert(`Classificação do vinho: ${classificacaoVinho}`);
+function mostrarDados(nome, ano, qtd) {
+    let tipo = classificarVinho(ano);
+    let aviso = verificarEstoque(qtd) ? "Estoque baixo!" : "Estoque ok";
+
+    console.log("Nome:", nome);
+    console.log("Ano:", ano);
+    console.log("Quantidade:", qtd);
+    console.log("Classificação:", tipo);
+    console.log(aviso);
+
+    alert(nome + " cadastrado!\n" + aviso);
+}
 
 
 
-
-//Programa principal -> 
-// while (enquanto a respota for "sim" continua, entao tem que criar uma variavel com conteudo "sim" para rodar)
-let resposta ="sim";
-// precisa ser terminado!!
-
-
-
-//     adicionar uma variavel contadora dos vinhos cadastrados 
-let totalCadastrado = 0; 
-//     contar vinhos que estao em baixo estoque (fazer um if utilizando a função do estoque baixo)
-let totalEstoqueBaixo = 0;
-    if (verificarEstoque(quantidade) === "Estoque Baixo") {
-        estoqueBaixo++;
-    }
-//     achar o ano mais antigo dos vinhos e o nome dele tbm
 let vinhoMaisAntigo = "";
 let safraMaisAntiga = 9999;
+let resposta ="sim";
+let totalCadastrado = 0; 
+let totalEstoqueBaixo = 0;
+// ******while (enquanto a respota for "sim" continua)*********
 
-if (safra < safraMaisAntiga) {
-    safraMaisAntiga = safra;
+//*****contar total cadastrados ******
+
+//     contar vinhos que estao em baixo estoque
+if (verificarEstoque(quantidade) === "Estoque Baixo") {
+    estoqueBaixo++;
+}
+
+//achar o ano mais antigo dos vinhos e o nome dele tbm
+if (ano < safraMaisAntiga) {
+    safraMaisAntiga = ano;
     vinhoMaisAntigo = nome;
 }
 
-alert(
-    "RELATÓRIO FINAL" +
-    "Total de cadastros: " + totalCadastros + "" +
-    "Vinhos com estoque baixo: " + totalEstoqueBaixo + "" +
-    "Vinho mais antigo: " + vinhoMaisAntigo +
-    "(Safra " + safraMaisAntiga + ")"
-);
-//     no final perguntar se deseja cadastrar outro (usando a mesma variavel do while)
-resposta = validarTexto("Você deseja adicionar outro vinho? (sim/não)")
-  .toLowerCase()
+//no do while final perguntar se deseja cadastrar outro
+resposta = prompt("Deseja cadastrar outro? (sim/nao)")
+//fim do while
+
+
 
 
 //Sintese dos Vinhos
 //um console.log colocando: Total de cadastros, vinhos em estoque baixo e o vinho mais antigo
+console.log(
+    "RELATÓRIO FINAL" +
+    "\nTotal de cadastros: " + totalCadastros + "" +
+    "\nVinhos com estoque baixo: " + totalEstoqueBaixo +
+    "\nVinho mais antigo: " + vinhoMaisAntigo 
+);
