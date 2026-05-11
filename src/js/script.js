@@ -20,9 +20,9 @@ function verificarEstoque(qtd) {
 }
 
 function classificarVinho(anos) {
-    if (anos <= 2023) {
+    if (anos >= 2023) {
         return "Vinho Jovem";
-    } else if (anos <= 2020) {
+    } else if (anos >= 2020) {
         return "Vinho Amadurecido";
     } else {
         return "Vinho Antigo";
