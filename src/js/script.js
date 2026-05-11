@@ -51,11 +51,14 @@ let totalCadastrado = 0;
 let totalEstoqueBaixo = 0;
 
 //while
+while (resposta.toLowerCase() === "sim") {
     let nome = validarTexto("Nome do vinho:");
     let ano = validarNumero("Ano:");
     let quantidade = validarNumero("Quantidade:");
 
     //variavel contadora - totalCadastrado
+
+    totalCadastrado++;    
 
     if (verificarEstoque(quantidade)) {
         totalEstoqueBaixo++;
@@ -68,7 +71,8 @@ let totalEstoqueBaixo = 0;
 
     mostrarDados(nome, ano, quantidade);
     resposta = prompt("Deseja cadastrar outro? (sim/nao)");
-//fim while
+}
+    //fim while
 
 
 
