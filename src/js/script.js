@@ -49,25 +49,26 @@ let safraMaisAntiga = 9999;
 let resposta ="sim";
 let totalCadastrado = 0; 
 let totalEstoqueBaixo = 0;
-// ******while (enquanto a respota for "sim" continua)*********
 
-//*****contar total cadastrados ******
+//while
+    let nome = validarTexto("Nome do vinho:");
+    let ano = validarNumero("Ano:");
+    let quantidade = validarNumero("Quantidade:");
 
-//     contar vinhos que estao em baixo estoque
-if (verificarEstoque(quantidade) === "Estoque Baixo") {
-    estoqueBaixo++;
-}
+    //variavel contadora - totalCadastrado
 
-//achar o ano mais antigo dos vinhos e o nome dele tbm
-if (ano < safraMaisAntiga) {
-    safraMaisAntiga = ano;
-    vinhoMaisAntigo = nome;
-}
+    if (verificarEstoque(quantidade)) {
+        totalEstoqueBaixo++;
+    }
 
-//no do while final perguntar se deseja cadastrar outro
-resposta = prompt("Deseja cadastrar outro? (sim/nao)")
-//fim do while
+    if (ano < safraMaisAntiga) {
+        safraMaisAntiga = ano;
+        vinhoMaisAntigo = nome;
+    }
 
+    mostrarDados(nome, ano, quantidade);
+    resposta = prompt("Deseja cadastrar outro? (sim/nao)");
+//fim while
 
 
 
@@ -75,7 +76,7 @@ resposta = prompt("Deseja cadastrar outro? (sim/nao)")
 //um console.log colocando: Total de cadastros, vinhos em estoque baixo e o vinho mais antigo
 console.log(
     "RELATÓRIO FINAL" +
-    "\nTotal de cadastros: " + totalCadastros + "" +
+    "\nTotal de cadastros: " + totalCadastrado+ "" +
     "\nVinhos com estoque baixo: " + totalEstoqueBaixo +
     "\nVinho mais antigo: " + vinhoMaisAntigo 
 );
