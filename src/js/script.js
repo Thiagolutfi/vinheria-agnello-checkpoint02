@@ -48,11 +48,29 @@ function classificarVinho() {
 let classificacaoVinho = classificarVinho();
 alert(`Classificação do vinho: ${classificacaoVinho}`);
 
+
+
+
 //Programa principal -> 
 // while (enquanto a respota for "sim" continua, entao tem que criar uma variavel com conteudo "sim" para rodar)
 //     adicionar uma variavel contadora dos vinhos cadastrados 
 //     contar vinhos que estao em baixo estoque (fazer um if utilizando a função do estoque baixo) 
 //     achar o ano mais antigo dos vinhos e o nome dele tbm
+let vinhoMaisAntigo = "";
+let safraMaisAntiga = 9999;
+
+if (safra < safraMaisAntiga) {
+    safraMaisAntiga = safra;
+    vinhoMaisAntigo = nome;
+}
+
+alert(
+    "RELATÓRIO FINAL" +
+    "Total de cadastros: " + totalCadastros + "" +
+    "Vinhos com estoque baixo: " + totalEstoqueBaixo + "" +
+    "Vinho mais antigo: " + vinhoMaisAntigo +
+    "(Safra " + safraMaisAntiga + ")"
+);
 //     no final perguntar se deseja cadastrar outro (usando a mesma variavel do while)
 
 
