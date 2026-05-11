@@ -58,6 +58,8 @@ while (resposta.toLowerCase() === "sim") {
 
     //variavel contadora - totalCadastrado
 
+    totalCadastrado++;    
+
     if (verificarEstoque(quantidade)) {
         totalEstoqueBaixo++;
     }
