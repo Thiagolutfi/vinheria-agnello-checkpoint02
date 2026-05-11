@@ -33,7 +33,7 @@ Integrantes do Grupo
 
 ---
 
-Link do GitHub Pages
+Link do GitHub Pages!
 
 Acesse o projeto online:
 
